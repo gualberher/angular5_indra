@@ -1,0 +1,24 @@
+<template id="t1">
+    <style>
+    h1{ color: purple}
+    </style>
+<h1>
+    Hola mundo componente TEMPLATE
+</h1>
+</template>
+
+<script>
+    class PruebaComponent extends HTMLElement {
+        constructor (){
+            super()
+            console.log("Creado el componente")
+            const oImport = document.querySelector('link[rel="import"]').import;
+            console.log("oImport")
+            const elem = oImport.querySelector("#t1")
+            console.log("elem")
+            this.attachShadow ({mode:'open'}).innerHTML = elem.innerHTML
+        }
+    }
+    customElements.define('prueba-component',PruebaComponent)
+</script>
+
