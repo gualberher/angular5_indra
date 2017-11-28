@@ -1,14 +1,12 @@
-class Libro{
+class Libro {
 
-    constructor (titulo,autor){
-
+    constructor (titulo, autor) {
         this.titulo = titulo
         this.autor = autor
     }
 }
 
-let oLibro = new Libro("Angular","Pepe")
 
+let oLibro = new Libro("Angular", "Pepe")
 oLibro.editorial = "Anaya"
-
 console.log(oLibro)
