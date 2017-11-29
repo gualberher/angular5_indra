@@ -37,7 +37,7 @@ export class FormTdComponent implements OnInit {
       {id: 4, nombre: 'sistemas'}
     ];
 
-    console.log(this.formulario);
+    // console.log(this.formulario);
   }
 
   enviarForm() {
@@ -47,6 +47,6 @@ export class FormTdComponent implements OnInit {
 
   borrarForm() {
     // console.log(this.formulario);
-    this.formulario.resetForm() ;
+    this.formulario.reset() ;
   }
 }

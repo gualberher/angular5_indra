@@ -1,7 +1,7 @@
 <header class="col-12">
   <h3>Formulario Model driven</h3>
   </header>
-<form class="col-sm-6">
+<form class="col-sm-6" [formGroup]="formulario">
   <!--Text-->
   <fieldset>
       <legend>Datos del Usuario</legend>
@@ -10,44 +10,39 @@
           <label for="name" class="col-3">Nombre</label>
           <input type="text" class="form-control col-9"
           name="name" id="name" required
-          placeholder="Indica tu nombre (es obligatorio)">
+          placeholder="Indica tu nombre (es obligatorio)"
+          formcontrolname="name">
       </div>
 
       <div class="form-group row">
           <!--Etiqueta / Campo "Apellidos"-->
           <label for="lastname"  class="col-3">Apellidos</label>
           <input type="text" class="form-control col-9"
-          id="lastname" name="lastname" required
-          placeholder="Indica tu apellido (es obligatorio)">
+          id="apellido" name="lastname" required
+          placeholder="Indica tu apellido (es obligatorio)"
+          formcontrolname="apellido">
       </div>
       <div class="form-group row">
           <!--Etiqueta / Campo "Telefono"-->
           <label for="phoneNumber" class="col-3">Teléfono</label>
           <input type="text" class="form-control col-9"
-          id="phoneNumber" name="phoneNumber"
-          placeholder="Indica tu teléfono (es obligatorio)">
+          id="phoneNumber" name="telefono"
+          placeholder="Indica tu teléfono (es obligatorio)"
+          formcontrolname="telefono">
       </div>
   </fieldset>
 
   <!--Radio-Buttos-->
   <fieldset class="form-group">
       <legend>Selecciona una Impresora</legend>
-          <div class="form-check">
-              <label class="form-check-label">
-                  <input type="radio" class="form-check-input"
-                      name ="printer" id="impresora_a"
-                      value="impresora_a">
-                      Impresora A
-              </label>
-          </div>
-          <div class="form-check">
-                  <label class="form-check-label">
-                      <input type="radio" class="form-check-input"
-                          name ="printer" id="impresora_b"
-                          value="impresora_b">
-                          Impresora B
-                  </label>
-              </div>
+      <div *ngFor="let print of aImpresoras" class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input"
+                name ="printer" id="{{print.id}}"
+                [value]="print"  formcontrolname="printer">
+                {{print.nombre}}
+        </label>
+      </div>
   </fieldset>
   <!--Checkbox-->
   <fieldset class="form-group">
@@ -55,14 +50,14 @@
       <div class="form-check">
           <label class="form-check-label">
           <input type="checkbox"  class="form-check-input"
-              id="color" name="color">
+              id="color" name="iscolor"  formcontrolname="iscolor">
               Imprimir en color
           </label>
       </div>
       <div class="form-check">
           <label class="form-check-label">
           <input type="checkbox"  class="form-check-input"
-              id="tono" name="tono">
+              id="tono" name="isclaro"  formcontrolname="isclaro">
               Tono claro</label>
       </div>
   </fieldset>
@@ -70,12 +65,11 @@
   <fieldset class="form-group">
       <legend>Departameto</legend>
       <div class="form-group row">
-          <select class="form-control"
-              id="select" name="select">
-              <option>Ventas</option>
-              <option>Marketing</option>
-              <option>Sistemas</option>
-          </select>
+        <select class="form-control"
+        id="select" name="departamento" formcontrolname="departamento">
+        <option *ngFor="let dpto of aDptos"
+                [ngValue]="dpto">{{dpto.nombre}}</option>
+        </select>
       </div>
   </fieldset>
   <div class="form-group row">
@@ -85,3 +79,10 @@
           Borrar</button>
   </div>
 </form>
+
+<div class="col-4">
+  <h4>Resultados</h4>
+<pre>
+{{formulario.value | json}}
+</pre>
+  </div>

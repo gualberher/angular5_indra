@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <article class="alto">
       <indra-form-td class="row"></indra-form-td>
-      <indra-formmd class="row"></indra-formmd>
+      <indra-form-md></indra-form-md>
     </article>
   `,
   styles: [
