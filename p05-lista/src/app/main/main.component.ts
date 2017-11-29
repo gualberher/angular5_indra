@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <article class="alto">
       <indra-tarea class="col-12 mt-4"></indra-tarea>
       <indra-acumulador class="col-12 mt-4"></indra-acumulador>
+      <indra-pipes class="col-12 mt-4"></indra-pipes>
     </article>
   `,
   styles: [
