@@ -14,11 +14,25 @@ export class TareaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      this.aTareas = [];
+      if(localStorage.getItem('tarea')){
+        this.aTareas = JSON.parse(localStorage.getItem('tarea'));
+      } else{
+        this.aTareas = [];
+      }
   }
 
     addTarea(){
       this.aTareas.push(this.sTarea);
+      this.actualizarStorage();
       this.sTarea = "";
+    }
+
+    delTarea(i: number){
+      this.aTareas.splice(i,1);
+      this.actualizarStorage();
+    }
+
+    private actualizarStorage(){
+      localStorage.setItem('tarea',JSON.stringify(this.aTareas));
     }
 }

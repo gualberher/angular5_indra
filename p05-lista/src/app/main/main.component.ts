@@ -4,9 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'indra-main',
   template: `
     <article class="alto">
-    <p>
-      main works!
-    </p>
+      <indra-tarea class="col-12 mt-4"></indra-tarea>
+      <indra-acumulador class="col-12 mt-4"></indra-acumulador>
     </article>
   `,
   styles: [
