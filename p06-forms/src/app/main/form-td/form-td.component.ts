@@ -47,6 +47,6 @@ export class FormTdComponent implements OnInit {
 
   borrarForm() {
     // console.log(this.formulario);
-    this.formulario.reset() ;
+    // this.formulario.reset() ;
   }
 }
