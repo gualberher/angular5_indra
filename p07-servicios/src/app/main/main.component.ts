@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
       <article class="row alto">
         <indra-mock-libros></indra-mock-libros>
         <indra-mock-libros-async></indra-mock-libros-async>
+        <indra-buscar-google class="mt-4"></indra-buscar-google>
       </article>
     </div>
   `,
