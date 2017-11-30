@@ -6,7 +6,7 @@ import { MockLibrosComponent } from './mock-libros/mock-libros.component';
 import { LibrosService } from './libros.service';
 import { MockLibrosAsyncComponent } from './mock-libros-async/mock-libros-async.component';
 import { BuscarGoogleComponent } from './buscar-google/buscar-google.component';
-import { HttpsrvComponent } from './httpsrv/httpsrv.component';
+import { BuscarHttpsrvComponent } from './buscar-httpsrv/buscar-httpsrv.component';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { HttpsrvComponent } from './httpsrv/httpsrv.component';
     MockLibrosComponent,
     MockLibrosAsyncComponent,
     BuscarGoogleComponent,
-    HttpsrvComponent],
+    BuscarHttpsrvComponent],
   providers: [LibrosService],
   exports: [MainComponent]
 })

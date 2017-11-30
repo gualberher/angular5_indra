@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
         <indra-mock-libros></indra-mock-libros>
         <indra-mock-libros-async></indra-mock-libros-async>
         <indra-buscar-google class="mt-4"></indra-buscar-google>
+        <indra-buscar-httpsrv></indra-buscar-httpsrv>
       </article>
     </div>
   `,
